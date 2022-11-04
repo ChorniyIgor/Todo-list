@@ -21,3 +21,11 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+.FilterBtns button:hover {
+  cursor: pointer;
+  color: #3a7cfd;
+}
+
+.FilterBtns button.activeBtn {
+  color: #3a7cfd;
+}

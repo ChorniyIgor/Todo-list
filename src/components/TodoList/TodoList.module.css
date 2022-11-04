@@ -7,3 +7,17 @@
   position: relative;
   top: -72px;
 }
+.EmptyListMsg {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #494c6b;
+  margin: 0px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding-left: 12px;
+  padding: 16px 20px;
+}

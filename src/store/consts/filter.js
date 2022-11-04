@@ -1,0 +1,1 @@
+export const SET_NEW_FILTER_VALUE = "SET_NEW_FILTER_VALUE";

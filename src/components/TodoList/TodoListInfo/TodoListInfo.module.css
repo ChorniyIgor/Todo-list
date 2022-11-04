@@ -1,0 +1,28 @@
+.TodoListInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.TodoListInfo p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.166667px;
+  color: #9495a5;
+}
+
+.TodoListInfo button {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: right;
+  letter-spacing: -0.166667px;
+  color: #9495a5;
+  outline: none;
+  border: none;
+  background: none;
+}
