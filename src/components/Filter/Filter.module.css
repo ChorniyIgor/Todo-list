@@ -1,0 +1,23 @@
+.Filter {
+  position: relative;
+  top: -40px;
+}
+
+.FilterBtns {
+  padding: 15px;
+  text-align: center;
+}
+
+.FilterBtns button {
+  background: none;
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: -0.194444px;
+  color: #9495a5;
+  padding-left: 10px;
+  padding-right: 10px;
+}

@@ -1,0 +1,28 @@
+.CheckboxBlock {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e3e4f1;
+  mix-blend-mode: normal;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.Checkbox input {
+  display: none;
+}
+.Checkbox input:checked ~ .CheckboxBlock {
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  position: relative;
+}
+.Checkbox input:checked ~ .CheckboxBlock::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url("../../../public/images/icon-check.svg");
+  background-size: cover;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
