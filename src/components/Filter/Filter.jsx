@@ -13,37 +13,31 @@ const Filter = () => {
   const activeBtnClass = filterValue === "active" ? styles.activeBtn : "";
   const completedBtnClass = filterValue === "completed" ? styles.activeBtn : "";
 
-
-
   const onFilterBtnClickHandler = (value) => {
     dispatch(setNewFilterValue(value));
   };
 
   return (
-    <Container className={styles.Filter}>
-      <Card>
-        <div className={styles.FilterBtns}>
-          <button
-            className={allBtnClass}
-            onClick={onFilterBtnClickHandler.bind(null, "all")}
-          >
-            All
-          </button>
-          <button
-            className={activeBtnClass}
-            onClick={onFilterBtnClickHandler.bind(null, "active")}
-          >
-            Active
-          </button>
-          <button
-            className={completedBtnClass}
-            onClick={onFilterBtnClickHandler.bind(null, "completed")}
-          >
-            Completed
-          </button>
-        </div>
-      </Card>
-    </Container>
+    <div className={styles.FilterBtns}>
+      <button
+        className={allBtnClass}
+        onClick={onFilterBtnClickHandler.bind(null, "all")}
+      >
+        All
+      </button>
+      <button
+        className={activeBtnClass}
+        onClick={onFilterBtnClickHandler.bind(null, "active")}
+      >
+        Active
+      </button>
+      <button
+        className={completedBtnClass}
+        onClick={onFilterBtnClickHandler.bind(null, "completed")}
+      >
+        Completed
+      </button>
+    </div>
   );
 };
 

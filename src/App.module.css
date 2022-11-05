@@ -7,3 +7,44 @@
 body {
   background: #f2f2f2;
 }
+
+button {
+  cursor: pointer;
+}
+
+.CreateNewTodoFormContainer {
+  position: relative;
+  top: -99px;
+}
+
+.TodoListContainer {
+  position: relative;
+  top: -72px;
+}
+
+.FilterContainer {
+  position: relative;
+  top: -40px;
+  background: white;
+}
+
+.FooterContainer {
+  position: relative;
+  top: 0px;
+}
+
+@media (min-width: 580px) {
+  .CreateNewTodoFormContainer {
+    position: relative;
+    top: -147px;
+  }
+
+  .TodoListContainer {
+    top: -123px;
+  }
+
+  .FooterContainer {
+    position: relative;
+    top: -80px;
+  }
+}

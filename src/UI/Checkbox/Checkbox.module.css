@@ -6,6 +6,7 @@
   mix-blend-mode: normal;
   border-radius: 50%;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .Checkbox input {
   display: none;

@@ -4,10 +4,6 @@
   margin: 0;
   background: transparent;
 }
-.TodoListContainer {
-  position: relative;
-  top: -72px;
-}
 .EmptyListMsg {
   font-style: normal;
   font-weight: 400;

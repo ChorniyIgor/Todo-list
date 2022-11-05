@@ -23,6 +23,10 @@ const TodoItem = (props) => {
     dispatch(toggleTodoStatus(id));
   };
 
+  const onCheckboxClickhandler = (id) => {
+    dispatch(toggleTodoStatus(id));
+  };
+
   const onRemoveBtnClickHandler = (id, evt) => {
     evt.stopPropagation();
     dispatch(removeTodo(id));
@@ -92,8 +96,14 @@ const TodoItem = (props) => {
     >
       <div className={styles.TodoItem}>
         <div className={styles.TodoItemContent}>
-          <Checkbox isChecked={props.todoData.isDone} />
-          <p>{props.todoData.title}</p>
+          <Checkbox
+            onClick={onCheckboxClickhandler.bind(null, props.todoData.id)}
+            isChecked={props.todoData.isDone}
+            id={props.todoData.id}
+          />
+          <p className={props.todoData.isDone ? styles["Title--isDone"] : ""}>
+            {props.todoData.title}
+          </p>
           <button
             onClick={onRemoveBtnClickHandler.bind(this, props.todoData.id)}
           >

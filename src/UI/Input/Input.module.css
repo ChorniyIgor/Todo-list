@@ -33,3 +33,19 @@
   line-height: 12px;
   color: #494c6b;
 }
+
+@media (min-width: 580px) {
+  .Input input {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.25px;
+    padding: 23px;
+    padding-left: 72px;
+    color: #393a4b;
+  }
+  .Input:before {
+    width: 24px;
+    height: 24px;
+    left: 24px;
+  }
+}

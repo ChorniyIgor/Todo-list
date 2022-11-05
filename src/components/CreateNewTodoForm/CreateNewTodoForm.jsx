@@ -22,9 +22,7 @@ const CreateNewTodoForm = () => {
     }
   };
 
-  let classes = isError
-    ? `${styles.FormContainer} ${styles.onError}`
-    : styles.FormContainer;
+  let classes = isError ? styles.onError : "";
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -37,19 +35,19 @@ const CreateNewTodoForm = () => {
   }, [isError]);
 
   return (
-    <Container className={classes}>
-      <Card>
-        <form onSubmit={onFormSubmitHandler}>
-          <Input
-            ref={titleRef}
-            attr={{
-              type: "text",
-              placeholder: "Create a new todo…",
-            }}
-          />
-        </form>
-      </Card>
-    </Container>
+    // <Container className={classes}>
+    //   <Card>
+    <form onSubmit={onFormSubmitHandler} className={classes}>
+      <Input
+        ref={titleRef}
+        attr={{
+          type: "text",
+          placeholder: "Create a new todo…",
+        }}
+      />
+    </form>
+    //   </Card>
+    // </Container>
   );
 };
 
