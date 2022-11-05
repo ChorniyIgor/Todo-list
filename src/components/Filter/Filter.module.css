@@ -1,6 +1,7 @@
 .Filter {
   position: relative;
   top: -40px;
+  background: white;
 }
 
 .FilterBtns {

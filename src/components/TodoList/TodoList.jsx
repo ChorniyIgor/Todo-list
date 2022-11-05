@@ -6,10 +6,13 @@ import { useSelector } from "react-redux";
 import { selectFilteredTodos } from "../../store/selectors/todos";
 import { getFilterValue } from "../../store/selectors/filter";
 import TodoListInfo from "./TodoListInfo/TodoListInfo";
+import { useState } from "react";
 
 const TodoList = () => {
   const filter = useSelector(getFilterValue);
   const todos = useSelector((state) => selectFilteredTodos(state, filter));
+
+  const [draggedCardId, setDraggedCardId] = useState(null);
 
   return (
     <Container className={styles.TodoListContainer}>
@@ -19,7 +22,13 @@ const TodoList = () => {
         )}
         <ul className={styles.TodoList}>
           {todos.map((todo) => (
-            <TodoItem todoData={todo} key={todo.id} />
+            <TodoItem
+              todosList={todos}
+              todoData={todo}
+              key={todo.id}
+              draggedCardId={draggedCardId}
+              setDraggedCardId={setDraggedCardId}
+            />
           ))}
         </ul>
 
