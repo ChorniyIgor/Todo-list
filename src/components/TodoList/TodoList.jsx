@@ -18,7 +18,11 @@ const TodoList = () => {
     <Container className={styles.TodoListContainer}>
       <Card>
         {todos.length === 0 && (
-          <p className={styles.EmptyListMsg}>There is no todos...</p>
+          <p className={styles.EmptyListMsg}>
+            {filter === "all" && "There is no todos..."}
+            {filter === "active" && "There is no active todos..."}
+            {filter === "completed" && "There is no completed todos..."}
+          </p>
         )}
         <ul className={styles.TodoList}>
           {todos.map((todo) => (

@@ -88,7 +88,7 @@ const TodoItem = (props) => {
       onDragOver={onDragOverHandler.bind(this, props.todoData.id)}
       onDrop={onDropHandler.bind(this, props.todoData.id)}
       onClick={onTodoItemClickHandler.bind(null, props.todoData.id)}
-      className={classes}
+      className={`${styles.TodoItemContainer} ${classes}`}
     >
       <div className={styles.TodoItem}>
         <div className={styles.TodoItemContent}>
