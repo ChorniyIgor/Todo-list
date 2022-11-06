@@ -6,6 +6,7 @@
   background: white;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  transition: all 0.3s;
 }
 
 .TodoListInfo p {
@@ -28,10 +29,20 @@
   outline: none;
   border: none;
   background: none;
+  padding: 0px;
 }
 
 .TodoListInfo button:hover {
   color: #494c6b;
+  transition: all 0.3s;
+}
+
+[data-theme="Dark"] .TodoListInfo {
+  background: #25273d;
+}
+
+[data-theme="Dark"] .TodoListInfo button:hover {
+  color: #e3e4f1;
 }
 
 @media (min-width: 580px) {
@@ -42,6 +53,9 @@
     font-size: 14px;
     line-height: 14px;
     min-width: 102px;
+  }
+  .TodoListInfoClearBtnContainer {
+    min-width: 106px;
   }
   .TodoListInfo .TodoListInfoClearBtn {
     font-weight: 400;

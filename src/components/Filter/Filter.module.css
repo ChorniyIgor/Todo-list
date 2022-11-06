@@ -1,10 +1,8 @@
-.Filter {
-  background: white;
-}
-
 .FilterBtns {
   padding: 15px;
   text-align: center;
+  background: white;
+  transition: all 0.3s;
 }
 
 .FilterBtns button {
@@ -20,13 +18,23 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .FilterBtns button:hover {
   cursor: pointer;
   color: #494c6b;
 }
 
+.FilterBtns button.activeBtn:hover {
+  cursor: auto;
+  color: #3a7cfd;
+}
+
 .FilterBtns button.activeBtn {
   color: #3a7cfd;
+}
+
+[data-theme="Dark"] .FilterBtns {
+  background: #25273d;
 }
 
 @media (min-width: 580px) {

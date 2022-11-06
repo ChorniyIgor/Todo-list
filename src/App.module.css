@@ -2,10 +2,14 @@
 
 .App {
   font-family: "Nunito Sans", sans-serif;
+  background: #f2f2f2;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  transition: all 0.2s;
 }
 
-body {
-  background: #f2f2f2;
+[data-theme="Dark"] {
+  background: #171823;
 }
 
 button {
@@ -25,7 +29,6 @@ button {
 .FilterContainer {
   position: relative;
   top: -40px;
-  background: white;
 }
 
 .FooterContainer {

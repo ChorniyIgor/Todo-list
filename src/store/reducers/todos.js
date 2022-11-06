@@ -43,12 +43,12 @@ const todosReducer = (state = todosInitialState, action) => {
   switch (action.type) {
     case ADD_NEW_TODO: {
       return [
-        ...state,
         {
-          title: action.title,
+          title: action.title.charAt(0).toUpperCase() + action.title.slice(1),
           isDone: false,
           id: Date.now() + Math.round(Math.random() * 1000000).toString(),
         },
+        ...state,
       ];
     }
 

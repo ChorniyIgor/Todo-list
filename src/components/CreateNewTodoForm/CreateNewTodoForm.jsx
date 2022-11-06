@@ -1,5 +1,3 @@
-import Card from "../../UI/Card/Card";
-import Container from "../../UI/Container/Container";
 import Input from "../../UI/Input/Input";
 import styles from "./CreateNewTodoForm.module.css";
 import { useDispatch } from "react-redux";
@@ -22,7 +20,7 @@ const CreateNewTodoForm = () => {
     }
   };
 
-  let classes = isError ? styles.onError : "";
+  let classes = `${styles.CreateNewTodoForm} ${isError ? styles.onError : ""}`;
 
   useEffect(() => {
     const id = setTimeout(() => {

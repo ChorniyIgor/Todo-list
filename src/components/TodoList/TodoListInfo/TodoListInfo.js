@@ -24,15 +24,16 @@ const TodoListInfo = () => {
         {todosActiveCount} {todosActiveCount === 1 ? "item" : "items"} left
       </p>
       {windowSize.width >= 580 && <Filter />}
-
-      {todosComplitedCount !== 0 && (
-        <button
-          className={styles.TodoListInfoClearBtn}
-          onClick={onClearBtnClickHandler}
-        >
-          Clear Completed
-        </button>
-      )}
+      <div className={styles.TodoListInfoClearBtnContainer}>
+        {todosComplitedCount !== 0 && (
+          <button
+            className={styles.TodoListInfoClearBtn}
+            onClick={onClearBtnClickHandler}
+          >
+            Clear Completed
+          </button>
+        )}
+      </div>
     </div>
   );
 };

@@ -7,12 +7,15 @@ import Footer from "./components/Footer/Footer";
 import Container from "./UI/Container/Container";
 import Card from "./UI/Card/Card";
 import useWindowSize from "./hooks/useWindowSize";
+import { useSelector } from "react-redux";
+import { getThemeMode } from "./store/selectors/theme";
 
 function App() {
   const windowSize = useWindowSize();
+  const themeMode = useSelector(getThemeMode);
 
   return (
-    <div className={styles.App}>
+    <div data-theme={themeMode} className={styles.App}>
       <Header />
 
       <Container className={styles.CreateNewTodoFormContainer}>
