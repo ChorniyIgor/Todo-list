@@ -46,4 +46,4 @@ Users should be able to:
 
 ## Author
 
-- Website - [Igor Chorniy](https://igorc.site/)
+- Website - [Chorniy Igor](https://igorc.site/)
