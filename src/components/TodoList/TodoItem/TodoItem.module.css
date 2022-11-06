@@ -2,6 +2,8 @@
   padding-bottom: 0px;
   transition: all 0.1s;
   cursor: grab;
+  position: relative;
+  left: 0px;
 }
 .TodoItemContent {
   display: flex;
@@ -25,6 +27,18 @@
 .DragOverReverce > div {
   padding-top: 60px;
   transition: all 0.1s;
+}
+.TodoItemContainer {
+  position: relative;
+  left: 0px;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.Delete {
+  position: relative;
+  left: 544px;
+  opacity: 0;
 }
 
 .TodoItemContainer:first-child .TodoItemContent {

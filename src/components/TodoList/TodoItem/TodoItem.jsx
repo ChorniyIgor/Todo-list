@@ -3,11 +3,14 @@ import Checkbox from "../../../UI/Checkbox/Checkbox";
 import { useDispatch } from "react-redux";
 import { removeTodo, toggleTodoStatus } from "../../../store/actions/todos";
 import { useDragElem } from "../../../hooks/useDragElem";
+import { useRef, useState } from "react";
 
 const TodoItem = (props) => {
   const dispatch = useDispatch();
 
   const { draggedCardId, setDraggedCardId } = props;
+  const [isDelete, setIsDelete] = useState(false);
+  const itemRef = useRef();
 
   const onTodoItemClickHandler = (id) => {
     dispatch(toggleTodoStatus(id));
@@ -15,6 +18,14 @@ const TodoItem = (props) => {
 
   const onCheckboxClickhandler = (id) => {
     dispatch(toggleTodoStatus(id));
+  };
+
+  const onRemoveBtnClickHandler = (id, evt) => {
+    evt.stopPropagation();
+    setIsDelete(true);
+    setTimeout(() => {
+      dispatch(removeTodo(id));
+    }, 300);
   };
 
   const {
@@ -25,20 +36,23 @@ const TodoItem = (props) => {
     onDragLeaveHandler,
     onDragOverHandler,
     onDropHandler,
-  } = useDragElem(props.todosList, dispatch, draggedCardId, setDraggedCardId);
-
-  const onRemoveBtnClickHandler = (id, evt) => {
-    evt.stopPropagation();
-    dispatch(removeTodo(id));
-  };
+  } = useDragElem({
+    list: props.todosList,
+    draggedCardId,
+    setDraggedCardId,
+  });
 
   const isDragOverItemClass = isDragOverItem.isFromTopToBottonDirection
     ? styles.DragOver
     : styles.DragOverReverce;
 
-  let classes = `${isDragOverItem.value && isDragOverItemClass} ${
-    isDraged && styles.Draged
-  }`;
+  let classes = [styles.TodoItemContainer];
+
+  if (isDragOverItem.value) classes.push(isDragOverItemClass);
+
+  if (isDraged) classes.push(styles.Draged);
+
+  if (isDelete) classes.push(styles.Delete);
 
   return (
     <li
@@ -49,7 +63,8 @@ const TodoItem = (props) => {
       onDragOver={onDragOverHandler.bind(this, props.todoData.id)}
       onDrop={onDropHandler.bind(this, props.todoData.id)}
       onClick={onTodoItemClickHandler.bind(null, props.todoData.id)}
-      className={`${styles.TodoItemContainer} ${classes} `}
+      className={classes.join(" ")}
+      ref={itemRef}
     >
       <div className={styles.TodoItem}>
         <div className={styles.TodoItemContent}>

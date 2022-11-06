@@ -33,7 +33,7 @@ const TodoList = () => {
         ))}
       </ul>
 
-      {todos.length !== 0 && <TodoListInfo />}
+      <TodoListInfo />
     </React.Fragment>
   );
 };

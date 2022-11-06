@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { replaceTodoItems } from "../store/actions/todos";
+import { useDispatch } from "react-redux";
 
-export const useDragElem = (
-  todosList,
-  dispatch,
-  draggedCardId,
-  setDraggedCardId
-) => {
+export const useDragElem = ({ list, draggedCardId, setDraggedCardId }) => {
   const [isDragOverItem, setIsDragOverItem] = useState({
     value: false,
     isFromTopToBottonDirection: false,
   });
   const [isDraged, setIsDraged] = useState(false);
+  const dispatch = useDispatch();
 
   const onDragStartHandler = (cardId, evt) => {
     setDraggedCardId(cardId);
@@ -34,10 +31,10 @@ export const useDragElem = (
   const onDragOverHandler = (cardId, evt) => {
     evt.preventDefault();
     if (cardId !== draggedCardId) {
-      const dragOverElementPosiiton = todosList.findIndex(
+      const dragOverElementPosiiton = list.findIndex(
         (todo) => todo.id === cardId
       );
-      const draggedElementPosition = todosList.findIndex(
+      const draggedElementPosition = list.findIndex(
         (todo) => todo.id === draggedCardId
       );
       setIsDragOverItem({
