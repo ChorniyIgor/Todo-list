@@ -46,5 +46,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Chorniy Igor](https://igorc.site/)
-- Upwork - [Chorniy Igor](https://www.upwork.com/freelancers/~01c5afe5dda1df0850)
+### Chorniy Igor
+
+- [Website](https://igorc.site/)
+- [Upwork Profile](https://www.upwork.com/freelancers/~01c5afe5dda1df0850)
