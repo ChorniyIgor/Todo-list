@@ -17,26 +17,27 @@ function App() {
   return (
     <div data-theme={themeMode} className={styles.App}>
       <Header />
-
-      <Container className={styles.CreateNewTodoFormContainer}>
-        <Card>
-          <CreateNewTodoForm />
-        </Card>
-      </Container>
-
-      <Container className={styles.TodoListContainer}>
-        <Card>
-          <TodoList />
-        </Card>
-      </Container>
-
-      {windowSize.width < 580 && (
-        <Container className={styles.FilterContainer}>
+      <main>
+        <Container className={styles.CreateNewTodoFormContainer}>
           <Card>
-            <Filter />
+            <CreateNewTodoForm />
           </Card>
         </Container>
-      )}
+
+        <Container className={styles.TodoListContainer}>
+          <Card>
+            <TodoList />
+          </Card>
+        </Container>
+
+        {windowSize.width < 580 && (
+          <Container className={styles.FilterContainer}>
+            <Card>
+              <Filter />
+            </Card>
+          </Container>
+        )}
+      </main>
 
       <Container className={styles.FooterContainer}>
         <Footer />
