@@ -1,7 +1,7 @@
 import { THEME_MODE_TOGGLE } from "../consts/themes";
 
 const initialState = {
-  themeMode: "Light",
+  themeMode: "Dark",
 };
 
 export const themeReducer = (state = initialState, action) => {

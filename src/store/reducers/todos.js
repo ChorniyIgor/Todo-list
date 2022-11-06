@@ -6,38 +6,7 @@ import {
   TOGGLE_TODO_STATUS,
 } from "../consts/todos";
 
-const todosInitialState = [
-  {
-    title: "Todo 1",
-    isDone: false,
-    id: 1,
-  },
-  {
-    title: "Todo 2",
-    isDone: true,
-    id: 2,
-  },
-  {
-    title: "Todo 3",
-    isDone: false,
-    id: 3,
-  },
-  {
-    title: "Todo 4",
-    isDone: false,
-    id: 4,
-  },
-  {
-    title: "Todo 5",
-    isDone: true,
-    id: 5,
-  },
-  {
-    title: "Todo 6",
-    isDone: false,
-    id: 6,
-  },
-];
+const todosInitialState = [];
 
 const todosReducer = (state = todosInitialState, action) => {
   switch (action.type) {
