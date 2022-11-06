@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Link
 
-- Live Site URL: [Add live site URL here](https://todo.igorc.site/)
+- Live Site URL: [todo.igorc.site](https://todo.igorc.site/)
 
 ### Built with
 
@@ -46,5 +46,4 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://igorc.site/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [Igor Chorniy](https://igorc.site/)
