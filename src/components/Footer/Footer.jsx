@@ -1,4 +1,3 @@
-import Container from "../../UI/Container/Container";
 import styles from "./Footer.module.css";
 
 const Footer = () => {

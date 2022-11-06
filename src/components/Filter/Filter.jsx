@@ -1,6 +1,4 @@
 import styles from "./Filter.module.css";
-import Container from "../../UI/Container/Container";
-import Card from "../../UI/Card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { setNewFilterValue } from "../../store/actions/filter";
 import { getFilterValue } from "../../store/selectors/filter";

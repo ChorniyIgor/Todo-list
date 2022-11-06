@@ -33,8 +33,6 @@ const CreateNewTodoForm = () => {
   }, [isError]);
 
   return (
-    // <Container className={classes}>
-    //   <Card>
     <form onSubmit={onFormSubmitHandler} className={classes}>
       <Input
         ref={titleRef}
@@ -44,8 +42,6 @@ const CreateNewTodoForm = () => {
         }}
       />
     </form>
-    //   </Card>
-    // </Container>
   );
 };
 

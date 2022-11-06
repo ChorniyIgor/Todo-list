@@ -1,6 +1,4 @@
 import styles from "./TodoList.module.css";
-import Card from "../../UI/Card/Card";
-import Container from "../../UI/Container/Container";
 import TodoItem from "./TodoItem/TodoItem";
 import { useSelector } from "react-redux";
 import { selectFilteredTodos } from "../../store/selectors/todos";

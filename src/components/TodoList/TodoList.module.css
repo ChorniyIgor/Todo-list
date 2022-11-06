@@ -21,3 +21,16 @@
   box-sizing: border-box;
   border-radius: 5px;
 }
+
+[data-theme="Dark"] .EmptyListMsg {
+  background: #25273d;
+  color: #c8cbe7;
+}
+
+@media (min-width: 580px) {
+  .EmptyListMsg {
+    font-size: 18px;
+    line-height: 18px;
+    padding: 20px 24px;
+  }
+}

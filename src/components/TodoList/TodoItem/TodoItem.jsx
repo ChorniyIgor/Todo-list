@@ -1,23 +1,13 @@
 import styles from "./TodoItem.module.css";
 import Checkbox from "../../../UI/Checkbox/Checkbox";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
-import {
-  removeTodo,
-  replaceTodoItems,
-  toggleTodoStatus,
-} from "../../../store/actions/todos";
+import { removeTodo, toggleTodoStatus } from "../../../store/actions/todos";
+import { useDragElem } from "../../../hooks/useDragElem";
 
 const TodoItem = (props) => {
   const dispatch = useDispatch();
 
   const { draggedCardId, setDraggedCardId } = props;
-
-  const [isDragOverItem, setIsDragOverItem] = useState({
-    value: false,
-    isFromTopToBottonDirection: false,
-  });
-  const [isDraged, setIsDraged] = useState(false);
 
   const onTodoItemClickHandler = (id) => {
     dispatch(toggleTodoStatus(id));
@@ -27,52 +17,19 @@ const TodoItem = (props) => {
     dispatch(toggleTodoStatus(id));
   };
 
+  const {
+    isDraged,
+    isDragOverItem,
+    onDragStartHandler,
+    onDragEndHandler,
+    onDragLeaveHandler,
+    onDragOverHandler,
+    onDropHandler,
+  } = useDragElem(props.todosList, dispatch, draggedCardId, setDraggedCardId);
+
   const onRemoveBtnClickHandler = (id, evt) => {
     evt.stopPropagation();
     dispatch(removeTodo(id));
-  };
-
-  const onDragStartHandler = (cardId, evt) => {
-    setDraggedCardId(cardId);
-    setIsDraged(true);
-  };
-
-  const onDragEndHandler = (evt) => {
-    setIsDraged(false);
-  };
-  const onDragLeaveHandler = (evt) => {
-    if (evt.target.tagName === "DIV") {
-      setIsDragOverItem({
-        value: false,
-        isFromTopToBottonDirection: false,
-      });
-    }
-  };
-  const onDragOverHandler = (cardId, evt) => {
-    evt.preventDefault();
-    if (cardId !== draggedCardId) {
-      const dragOverElementPosiiton = props.todosList.findIndex(
-        (todo) => todo.id === cardId
-      );
-      const draggedElementPosition = props.todosList.findIndex(
-        (todo) => todo.id === draggedCardId
-      );
-      setIsDragOverItem({
-        value: true,
-        isFromTopToBottonDirection:
-          dragOverElementPosiiton > draggedElementPosition,
-      });
-    }
-  };
-  const onDropHandler = (cardId, evt) => {
-    evt.preventDefault();
-    setIsDragOverItem({
-      value: false,
-      isFromTopToBottonDirection: false,
-    });
-    if (draggedCardId !== cardId) {
-      dispatch(replaceTodoItems(draggedCardId, cardId));
-    }
   };
 
   const isDragOverItemClass = isDragOverItem.isFromTopToBottonDirection
